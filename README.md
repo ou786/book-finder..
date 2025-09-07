@@ -32,8 +32,9 @@ Built with **React + Tailwind CSS**, designed to be **minimal and interview-frie
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/book-finder.git
+git clone https://github.com/ou786/book-finder..
 cd book-finder
+```
 ### 2. Install dependencies
 ```bash
 npm install
