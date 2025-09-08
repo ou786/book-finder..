@@ -14,7 +14,7 @@ It provides multiple ways to search, organize, and browse books with a clean and
   - Publisher
   - Year of publication
 - 📖 View book details: title, author(s), first publish year, and cover.
-- ⭐ Save books to **Favorites** and manage them easily.
+- ⭐ Save books as **Book Cards** to **Favorites** and manage them easily.
 - 📑 **Pagination** with next/prev + jump to first/last page.
 - 🏠 Home page for welcome screen.
 - 🎨 Clean, responsive UI with Tailwind CSS.
@@ -63,7 +63,7 @@ Ensure your system meets these requirements:
 ## 🎥 Live Demo and Video Walkthrough
 
 - **🔗 Live Application**: [Visit Book Finder App](https://book-finder-lyart.vercel.app/)
-- **🎬 Video Walkthrough**: [Watch Wworking Demo]()
+- **🎬 Video Walkthrough**: [Watch Working Demo](https://drive.google.com/file/d/1UzlH8TAQLGT2AJjPQlXq9yoK5Z6KFhWw/view?usp=sharing)
 
 ---
 
