@@ -63,7 +63,7 @@ Ensure your system meets these requirements:
 ## 🎥 Live Demo and Video Walkthrough
 
 - **🔗 Live Application**: [Visit Book Finder App](https://book-finder-lyart.vercel.app/)
-- **🎬 Video Walkthrough**: [Watch Working Demo](https://drive.google.com/file/d/1UzlH8TAQLGT2AJjPQlXq9yoK5Z6KFhWw/view?usp=sharing)
+- **🎬 Video Walkthrough**: [Watch Working Demo](https://drive.google.com/file/d/1Af1dEeF2osx_LTJHi5GvOSgoCCgew06J/view?usp=sharing)
 
 ---
 
