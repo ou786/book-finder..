@@ -48,13 +48,12 @@ Ensure your system meets these requirements:
 ### 🌟 Homepage
 
 ![Homepage Screenshot](public/Output/HomePage.png)
-)
 
 ### 🌟 Search Results
 
 ![Search Results Screenshot](public/Output/search-bar-results.png)
 
-### 🌟 Book Details
+### 🌟 Favorites
 
 ![Favorites Tab Screenshot](public/Output/favorites-tab.png)
 
@@ -63,7 +62,7 @@ Ensure your system meets these requirements:
 
 ## 🎥 Live Demo and Video Walkthrough
 
-- **🔗 Live Application**: [Visit Book Finder App]()
+- **🔗 Live Application**: [Visit Book Finder App](https://book-finder-lyart.vercel.app/)
 - **🎬 Video Walkthrough**: [Watch Wworking Demo]()
 
 ---
@@ -83,3 +82,11 @@ npm install
 ```bash
 npm start
 ```
+
+---
+
+
+## 🌍 API Documentation
+
+This application uses the **Open Library API** to fetch book details.  
+📖 [Explore Open Library API](https://openlibrary.org/developers)

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import BookCard from "./BookCard";
 
 export default function App() {
   const [query, setQuery] = useState("");
@@ -142,7 +143,7 @@ else {
   </div>
 </header>
 
-{/* Home Page / Hero Section */}
+{/* Home Page */}
 {activeTab === "home" && (
   <section
     className="relative w-full h-screen flex items-center justify-center text-center text-white"
@@ -153,15 +154,13 @@ else {
       backgroundPosition: "center",
     }}
   >
-    {/* Transparent overlay */}
     <div className="absolute inset-0 bg-black bg-opacity-60"></div>
-
-    {/* Content */}
     <div className="relative z-10 max-w-3xl mx-auto px-4">
-      <h2 className="text-4xl md:text-4xl font-extrabold mb-6">
-        FIND A BOOK OF YOUR CHOICE... 
-      </h2>
-      <p className="text-lg md:text-2xl text-gray-200 mb-8 leading-relaxed">
+      <h2 className="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight drop-shadow-lg">
+  Find a Book of Your Choice 📚
+</h2>
+
+      <p className="text-base md:text-2xl text-gray-200 mb-8 leading-relaxed px-4">
         Search for books by <span className="font-semibold text-red-600">Title</span>,{" "}
         <span className="font-semibold text-purple-500">Author</span>,{" "}
         <span className="font-semibold text-pink-500">Genre</span>,{" "}
@@ -172,23 +171,15 @@ else {
       </p>
       <button
         onClick={() => setActiveTab("search")}
-        className="bg-red-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 shadow-lg transition transform hover:scale-105 text-lg"
-      >
+        className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full shadow-lg transition transform hover:scale-105 text-lg"
+>
         Start Searching
       </button>
     </div>
   </section>
 )}
 
-
-
-
-
-
-
-
-
-      {/* Search Tab */}
+{/* Search Tab */}
       {activeTab === "search" && (
         <>
           {/* Search Form */}
@@ -255,45 +246,17 @@ else {
           {!loading && books.length === 0 && !error && (
             <p className="text-gray-500 italic text-center">🔍 Start by searching for a book above.</p>
           )}
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl mx-auto mb-12">
+  {books.map((book) => (
+    <BookCard
+      key={book.key}
+      book={book}
+      isFavorite={isFavorite}
+      toggleFavorite={toggleFavorite}
+    />
+  ))}
+</div>
 
-          {/* Results Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-6xl mx-auto mb-12">
-            {books.map((book) => (
-              <div
-                key={book.key}
-                className="bg-white p-4 rounded-2xl shadow hover:shadow-xl transition transform hover:-translate-y-1"
-              >
-                {book.cover_i ? (
-                  <img
-                    src={`https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg`}
-                    alt={book.title}
-                    className="w-full h-56 object-cover rounded-xl mb-3"
-                  />
-                ) : (
-                  <div className="w-full h-56 flex items-center justify-center bg-gray-200 text-gray-500 rounded-xl mb-3">
-                    No Cover
-                  </div>
-                )}
-                <h2 className="text-lg font-bold text-gray-800">{book.title}</h2>
-                <p className="text-sm text-gray-600 mb-1">
-                  {book.author_name ? book.author_name.join(", ") : "Unknown Author"}
-                </p>
-                <p className="text-xs text-gray-500 mb-2">
-                  {book.first_publish_year ? `First published: ${book.first_publish_year}` : ""}
-                </p>
-                <button
-                  onClick={() => toggleFavorite(book)}
-                  className={`px-3 py-1 rounded-lg text-sm font-medium ${
-                    isFavorite(book)
-                      ? "bg-yellow-400 text-white hover:bg-yellow-500"
-                      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
-                  }`}
-                >
-                  {isFavorite(book) ? "★ Remove Favorite" : "☆ Add Favorite"}
-                </button>
-              </div>
-            ))}
-          </div>
 
           {/* Pagination */}
 {books.length > 0 && (
@@ -356,41 +319,35 @@ else {
     </button>
   </div>
 )}
-
-
-
-        </>
-      )}
+</>
+)}
 
       {/* Favorites Tab */}
-      {activeTab === "favorites" && (
-        <div className="w-full max-w-6xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">⭐ Your Favorite Books</h2>
-          {favorites.length === 0 ? (
-            <p className="text-gray-500 italic text-center">No favorites yet. Add some books first!</p>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-              {favorites.map((book) => (
-                <div
-                  key={book.key}
-                  className="bg-yellow-50 p-4 rounded-2xl shadow-md border border-yellow-200"
-                >
-                  <h3 className="font-semibold">{book.title}</h3>
-                  <p className="text-sm text-gray-600">
-                    {book.author_name ? book.author_name.join(", ") : "Unknown Author"}
-                  </p>
-                  <button
-                    onClick={() => toggleFavorite(book)}
-                    className="mt-2 text-red-600 text-sm hover:underline"
-                  >
-                    Remove
-                  </button>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
+{activeTab === "favorites" && (
+  <div className="w-full max-w-6xl mx-auto">
+    <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+      ⭐ Your Favorite Books
+    </h2>
+
+    {favorites.length === 0 ? (
+      <p className="text-gray-500 italic text-center">
+        No favorites yet. Add some books first!
+      </p>
+    ) : (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        {favorites.map((book) => (
+          <BookCard
+            key={book.key}
+            book={book}
+            isFavorite={isFavorite}
+            toggleFavorite={toggleFavorite}
+          />
+        ))}
+      </div>
+    )}
+  </div>
+)}
+
     </div>
   );
 }
