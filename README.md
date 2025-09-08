@@ -47,15 +47,16 @@ Ensure your system meets these requirements:
 
 ### 🌟 Homepage
 
-![Homepage Screenshot](src\HomePage.png)
+![Homepage Screenshot](public/Output/HomePage.png)
+)
 
 ### 🌟 Search Results
 
-![Search Results Screenshot](src\search-bar-results.png)
+![Search Results Screenshot](public/Output/search-bar-results.png)
 
 ### 🌟 Book Details
 
-![Favorites Tab Screenshot](src\favorites-tab.png)
+![Favorites Tab Screenshot](public/Output/favorites-tab.png)
 
 
 ---
