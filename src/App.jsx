@@ -89,8 +89,9 @@ else {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-100 flex flex-col items-center p-6">
       {/* Header */}
-<header className="w-full bg-transparent py-4">
-  <div className="flex items-center justify-between p-2 shadow-md bg-gray-100">
+{/* Header / Navbar */}
+<header className="w-full bg-gray-900 text-white shadow-md">
+  <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
     
     {/* Title as Home link */}
     <button
@@ -100,67 +101,83 @@ else {
         setBooks([]);
         setPage(1);
       }}
-      className="absolute left-1/2 transform -translate-x-1/2 text-4xl font-extrabold text-gray-1000 hover:text-blue-600"
+      className="text-3xl font-extrabold tracking-wide"
     >
-      Book Finder...
+      <span className="text-red-500">Book</span><span className="text-green-500">Finder</span>  
     </button>
 
-    {/* Right side buttons */}
-    <div className="ml-auto flex gap-2">
+    {/* Right side nav buttons */}
+    <div className="flex gap-4">
       <button
         onClick={() => setActiveTab("home")}
-        className={`px-4 py-2 rounded-lg font-medium ${
+        className={`px-4 py-2 rounded-lg font-medium transition ${
           activeTab === "home"
-            ? "bg-green-500 text-white"
-            : "bg-white text-gray-700 border"
+            ? "bg-orange-500 text-white"
+            : "hover:text-orange-400"
         }`}
       >
         🏠 Home
       </button>
       <button
         onClick={() => setActiveTab("search")}
-        className={`px-4 py-2 rounded-lg font-medium ${
+        className={`px-4 py-2 rounded-lg font-medium transition ${
           activeTab === "search"
             ? "bg-red-600 text-white"
-            : "bg-white text-red-900 border"
+            : "hover:text-red-400"
         }`}
       >
-        Search
+        🔍 Search
       </button>
       <button
         onClick={() => setActiveTab("favorites")}
-        className={`px-4 py-2 rounded-lg font-medium ${
+        className={`px-4 py-2 rounded-lg font-medium transition ${
           activeTab === "favorites"
             ? "bg-yellow-500 text-white"
-            : "bg-white text-gray-700 border"
+            : "hover:text-yellow-400"
         }`}
       >
-        Favorites ({favorites.length})
+        ⭐ Favorites ({favorites.length})
       </button>
     </div>
   </div>
 </header>
 
-{/* Home Page */}
+{/* Home Page / Hero Section */}
 {activeTab === "home" && (
-  <div className="flex flex-col items-center mt-2 text-center">
-    <h2 className="text-2xl font-bold text-gray-800 cursive mb-4">Welcome to Book Finder 📚</h2>
-<p className="text-gray-700 text-lg italic leading-relaxed tracking-wide mb-6 max-w-2xl">
-  Search for books by <span className="font-semibold text-gray-900 italic">title</span>, 
-  <span className="font-semibold text-gray-900"> author</span>, 
-  <span className="font-semibold text-gray-900"> genre</span>, 
-  <span className="font-semibold text-gray-900"> ISBN</span>, 
-  <span className="font-semibold text-gray-900"> publisher</span> or 
-  <span className="font-semibold text-gray-900"> year</span>.  
-  Save your favorites to revisit later.
-</p>
-    <button
-      onClick={() => setActiveTab("search")}
-className="bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 shadow-md transition transform hover:scale-105 text-lg"
-    >
-      Start Searching
-    </button>
-  </div>
+  <section
+    className="relative w-full h-screen flex items-center justify-center text-center text-white"
+    style={{
+      backgroundImage:
+  "url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80')",
+  backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    {/* Transparent overlay */}
+    <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+
+    {/* Content */}
+    <div className="relative z-10 max-w-3xl mx-auto px-4">
+      <h2 className="text-4xl md:text-4xl font-extrabold mb-6">
+        FIND A BOOK OF YOUR CHOICE... 
+      </h2>
+      <p className="text-lg md:text-2xl text-gray-200 mb-8 leading-relaxed">
+        Search for books by <span className="font-semibold text-red-600">Title</span>,{" "}
+        <span className="font-semibold text-purple-500">Author</span>,{" "}
+        <span className="font-semibold text-pink-500">Genre</span>,{" "}
+        <span className="font-semibold text-yellow-500">Year</span>,{" "}
+        <span className="font-semibold text-green-500">Publisher</span> or{" "}
+        <span className="font-semibold text-rose-600">ISBN</span>{"."} Save your favorites to
+        revisit later.
+      </p>
+      <button
+        onClick={() => setActiveTab("search")}
+        className="bg-red-600 text-white px-8 py-4 rounded-full hover:bg-blue-700 shadow-lg transition transform hover:scale-105 text-lg"
+      >
+        Start Searching
+      </button>
+    </div>
+  </section>
 )}
 
 

@@ -1,7 +1,7 @@
 # 📚 Book Finder
 
-A simple and clean React app to search for books using the [Open Library API](https://openlibrary.org/developers/api).  
-Built with **React + Tailwind CSS**, designed to be **minimal and interview-friendly**.  
+Book Finder is a simple and responsive web application that allows users to search and explore books from the [Open Library API](https://openlibrary.org/developers/api).  
+It provides multiple ways to search, organize, and browse books with a clean and modern interface.
 
 ---
 
@@ -22,13 +22,52 @@ Built with **React + Tailwind CSS**, designed to be **minimal and interview-frie
 ---
 
 ## 🛠️ Tech Stack
-- **React** (Vite/CRA depending on setup)
-- **Tailwind CSS** for styling
-- **Open Library API** for book data
+
+| Technology          | Description                         |
+| ------------------- | ----------------------------------- |
+| ⚛️ React.js         | JavaScript library for building UI  |
+| 🎨 Tailwind CSS     | Utility-first CSS framework         |
+| 📡 Open Library API | Fetches book data from Open Library |
 
 ---
 
-## 🚀 Getting Started
+## 💻 Machine Requirements
+
+Ensure your system meets these requirements:
+
+- **Node.js**: Version 16 or later
+- **npm**: Version 8 or later
+- **Browser**: Chrome, Edge, or Firefox (latest versions)
+
+
+---
+
+
+## 📸 Screenshots
+
+### 🌟 Homepage
+
+![Homepage Screenshot](src\HomePage.png)
+
+### 🌟 Search Results
+
+![Search Results Screenshot](src\search-bar-results.png)
+
+### 🌟 Book Details
+
+![Favorites Tab Screenshot](src\favorites-tab.png)
+
+
+---
+
+## 🎥 Live Demo and Video Walkthrough
+
+- **🔗 Live Application**: [Visit Book Finder App]()
+- **🎬 Video Walkthrough**: [Watch Wworking Demo]()
+
+---
+
+## 📌 Installation
 
 ### 1. Clone the repo
 ```bash
